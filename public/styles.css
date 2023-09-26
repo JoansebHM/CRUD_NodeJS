@@ -26,6 +26,11 @@ button {
     padding: 10px;
 }
 
+button:hover{
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
 section{
     display: flex;
     gap: 200px;
@@ -100,12 +105,5 @@ tr:nth-child(odd) {
     transform: scale(1.1);
 }
 
-.doctores:hover {
-    transform: scale(1.1);
-}
-
-.citas:hover {
-    transform: scale(1.1);
-}
 
 
