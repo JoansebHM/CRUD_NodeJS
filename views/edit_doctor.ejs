@@ -8,31 +8,37 @@
 </head>
 <body>
     <h1>
-        Nuevo Registro Doctor
+        Editar Doctor
     </h1>
     <div class="main-div">
-        <form action="/save_doctor" method="post">
+        <% if (rows) { %>
+        <form action="/edit_doctor" method="post">
+            <div class="row">   
+                <label for="Nombre">IdDoctor</label>
+                <input id="id" name="IdDoctor" value="<%= rows.IdDoctor %>" readonly>
+            </div>
             <div class="row">
                 <label for="Nombre">NombreUs</label>
-                <input type="text" name="NombreUs" id="NombreUs" required>
+                <input type="text" name="NombreUs" id="NombreUs" value="<%= rows.NombreUs %>">
             </div>
             <div class="row">
                 <label for="Correo">ApellidoUs</label>
-                <input type="text" name="ApellidoUs" id="ApellidoUs">
+                <input type="text" name="ApellidoUs" id="ApellidoUs" value="<%= rows.ApellidoUs %>">
             </div>
             <div class="row">
                 <label for="Celular">CorreoUs</label>
-                <input type="text" name="CorreoUs" id="CorreoUs">
+                <input type="text" name="CorreoUs" id="CorreoUs" value="<%= rows.CorreoUs %>">
             </div>
             <div class="row">
                 <label for="Edad">Especialidad</label>
-                <input type="text" name="Especialidad" id="Especialidad">
+                <input type="text" name="Especialidad" id="Especialidad" value="<%= rows.Especialidad %>">
             </div>
             <div class="row">
                 <button type="submit">Guardar</button>
-                <a href="/doctores">Cancelar</a>
+                <a href="/doctor">Cancelar</a>
             </div>
         </form>
+        <% } %>
     </div>
 </body>
 </html>

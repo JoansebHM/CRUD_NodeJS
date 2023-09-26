@@ -41,3 +41,39 @@ exports.update = (req, res)=>{
         res.redirect('/usuario')
     })
 }
+
+exports.save_doctor = (req, res) => {
+    const NombreUs = req.body.NombreUs;
+    const ApellidoUs = req.body.Correo;
+    const CorreoUs = req.body.CorreoUs;
+    const Especialidad = req.body.Especialidad;
+    conexion.query('INSERT INTO doctores SET ?', {
+        NombreUs: NombreUs,
+        ApellidoUs: ApellidoUs,
+        CorreoUs: CorreoUs,
+        Especialidad: Especialidad}, (err) => {
+        if (err){
+            throw err
+        }
+        res.redirect('/doctores')
+     })
+}
+
+exports.update_doctor = (req, res) => {
+    const IdDoctor = req.body.IdDoctor;
+    const NombreUs = req.body.NombreUs;
+    const ApellidoUs = req.body.Correo;
+    const CorreoUs = req.body.CorreoUs;
+    const Especialidad = req.body.Especialidad;
+    conexion.query('UPDATE doctores SET ? WHERE IdDoctor = ?', [{
+        NombreUs: NombreUs,
+        ApellidoUs: ApellidoUs,
+        CorreoUs: CorreoUs,
+        Especialidad: Especialidad,
+     }, IdDoctor], (err) => {
+        if (err){
+            throw err
+        }
+        res.redirect('/doctores')
+     })
+}

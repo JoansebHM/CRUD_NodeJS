@@ -13,9 +13,9 @@
     <table>
       <thead>
         <th scope="col">IdDoctor</th>
-        <th scope="col">NombreUs</th>
-        <th scope="col">ApellidoUs</th>
-        <th scope="col">CorreoUs</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo</th>
         <th scope="col">Especialidad</th>
         <th scope="col"></th>
       </thead>
@@ -28,10 +28,10 @@
               <td><%= doctor.CorreoUs %></td>
               <td><%= doctor.Especialidad %></td>
               <td>
-                <a href="/edit/<%= doctor.IdDoctor %>">
+                <a href="/edit_doctor/<%= doctor.IdDoctor %>">
                   <img src="/img/editar.png" alt="" class="icon">
                 </a>
-                <a href="/delete/<%= doctor.IdDoctor %>">
+                <a href="/delete_doctor/<%= doctor.IdDoctor %>">
                   <img src="/img/borrar.png" alt="" class="icon">
                 </a>
               </td>

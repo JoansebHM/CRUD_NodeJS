@@ -46,6 +46,26 @@ router.get('/edit/:IdUsuario', (req, res)=>{
     })
 })
 
+router.get('/edit_doctor/:IdDoctor', (req, res)=>{
+    const IdDoctor = req.params.IdDoctor;
+    conexion.query('SELECT * FROM doctores WHERE IdDoctor=?', [IdDoctor], (err, rows) =>{
+        if (err){
+            throw err;
+        }
+        res.render('edit_doctor', {rows: rows[0]})
+    })
+})
+
+router.get('/delete_doctor/:IdDoctor', (req, res)=>{
+    const IdDoctor = req.params.IdDoctor;
+    conexion.query('DELETE FROM doctores WHERE IdDoctor=?', [IdDoctor], (err) =>{
+        if (err){
+            throw err;
+        }
+        res.redirect('/doctores')
+    })
+})
+
 router.get('/delete/:IdUsuario', (req, res)=>{
     const IdUsuario = req.params.IdUsuario
     conexion.query('DELETE FROM usuario WHERE IdUsuario = ?', [IdUsuario], (err)=>{
@@ -59,5 +79,7 @@ router.get('/delete/:IdUsuario', (req, res)=>{
 const crud = require('./controllers/crud')
 router.post('/save', crud.save)
 router.post('/edit', crud.update)
+router.post('/save_doctor', crud.save_doctor)
+router.post('/edit_doctor', crud.update_doctor)
 
 module.exports = router;
