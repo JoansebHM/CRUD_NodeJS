@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+nav {
+    background-color: #ababab; 
+    color: white; 
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 10px;
+}
+
+section{
+    display: flex;
+    gap: 200px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px;
+    margin: 20px; 
+    width: 80%;
+    height: 80%;
+}
+
+.usuarios{
+    cursor: pointer;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s; 
+}
+
+.doctores{
+    cursor: pointer;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center; 
+    transition: transform 0.2s;
+}
+
+.citas{
+    cursor: pointer;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.usuarios:hover {
+    transform: scale(1.1);
+}
+
+.doctores:hover {
+    transform: scale(1.1);
+}
+
+.citas:hover {
+    transform: scale(1.1);
+}
+
+
