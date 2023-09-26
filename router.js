@@ -7,7 +7,16 @@ router.get('/citas', (req, res) => {
 })
 
 router.get('/doctores', (req, res) => {
-    res.render('doctores');
+    conexion.query('SELECT * FROM doctores', (err, rows) =>{
+        if (err){
+            throw err;
+        }
+        res.render('doctores', {rows: rows})
+    })
+})
+
+router.get('/create_doctor', (req, res) => {
+    res.render('create_doctor');
 })
 
 router.get('/', (req, res) => {
