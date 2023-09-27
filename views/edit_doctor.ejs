@@ -12,6 +12,11 @@
             <div class="main-div">
                 <% if (rows) { %>
                 <form action="/edit_doctor" method="post" class="main-form">
+                    <div class="row">
+                        <h1>
+                            Editar Doctor
+                        </h1>
+                    </div>
                     <div class="row">   
                         <label for="Nombre">IdDoctor</label>
                         <input id="id" name="IdDoctor" value="<%= rows.IdDoctor %>" readonly>
