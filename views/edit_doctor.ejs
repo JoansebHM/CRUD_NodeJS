@@ -4,41 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/optionstyles.css">
 </head>
 <body>
-    <h1>
-        Editar Doctor
-    </h1>
-    <div class="main-div">
-        <% if (rows) { %>
-        <form action="/edit_doctor" method="post">
-            <div class="row">   
-                <label for="Nombre">IdDoctor</label>
-                <input id="id" name="IdDoctor" value="<%= rows.IdDoctor %>" readonly>
+    <main>
+        <section class="create-reg">
+            <div class="main-div">
+                <% if (rows) { %>
+                <form action="/edit_doctor" method="post" class="main-form">
+                    <div class="row">   
+                        <label for="Nombre">IdDoctor</label>
+                        <input id="id" name="IdDoctor" value="<%= rows.IdDoctor %>" readonly>
+                    </div>
+                    <div class="row">
+                        <label for="Nombre">Nombre</label>
+                        <input type="text" name="NombreUs" id="NombreUs" value="<%= rows.NombreUs %>">
+                    </div>
+                    <div class="row">
+                        <label for="Correo">Apellido</label>
+                        <input type="text" name="ApellidoUs" id="ApellidoUs" value="<%= rows.ApellidoUs %>">
+                    </div>
+                    <div class="row">
+                        <label for="Celular">Correo</label>
+                        <input type="text" name="CorreoUs" id="CorreoUs" value="<%= rows.CorreoUs %>">
+                    </div>
+                    <div class="row">
+                        <label for="Edad">Especialidad</label>
+                        <input type="text" name="Especialidad" id="Especialidad" value="<%= rows.Especialidad %>">
+                    </div>
+                    <div class="row">
+                        <button type="submit">Guardar</button>
+                        <a href="/doctores">Cancelar</a>
+                    </div>
+                </form>
+                <% } %>
             </div>
-            <div class="row">
-                <label for="Nombre">NombreUs</label>
-                <input type="text" name="NombreUs" id="NombreUs" value="<%= rows.NombreUs %>">
-            </div>
-            <div class="row">
-                <label for="Correo">ApellidoUs</label>
-                <input type="text" name="ApellidoUs" id="ApellidoUs" value="<%= rows.ApellidoUs %>">
-            </div>
-            <div class="row">
-                <label for="Celular">CorreoUs</label>
-                <input type="text" name="CorreoUs" id="CorreoUs" value="<%= rows.CorreoUs %>">
-            </div>
-            <div class="row">
-                <label for="Edad">Especialidad</label>
-                <input type="text" name="Especialidad" id="Especialidad" value="<%= rows.Especialidad %>">
-            </div>
-            <div class="row">
-                <button type="submit">Guardar</button>
-                <a href="/doctor">Cancelar</a>
-            </div>
-        </form>
-        <% } %>
-    </div>
+        </section>
+    </main>
 </body>
 </html>

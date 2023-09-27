@@ -4,45 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/optionstyles.css">
 </head>
 <body>
-    <h1>
-        Editar Usuario
-    </h1>
-    <div class="main-div">
-        <% if (rows) { %>
-        <form action="/edit" method="post">
-            <div class="row">   
-                <label for="Nombre">Id</label>
-                <input id="id" name="IdUsuario" value="<%= rows.IdUsuario %>" readonly>
+    <main>
+        <section class="create-reg">
+            <div class="main-div">
+                <% if (rows) { %>
+                <form action="/edit" method="post" class="main-form">
+                    <div class="row">
+                        <h1>
+                            Editar Usuario
+                        </h1>
+                    </div>
+                    <div class="row">   
+                        <label for="Nombre">Id</label>
+                        <input id="id" name="IdUsuario" value="<%= rows.IdUsuario %>" readonly>
+                    </div>
+                    <div class="row">
+                        <label for="Nombre">Nombre</label>
+                        <input type="text" name="Nombre" id="Nombre" value="<%= rows.Nombre %>">
+                    </div>
+                    <div class="row">
+                        <label for="Correo">Correo</label>
+                        <input type="text" name="Correo" id="Correo" value="<%= rows.Correo %>">
+                    </div>
+                    <div class="row">
+                        <label for="Celular">Celular</label>
+                        <input type="text" name="Celular" id="Celular" value="<%= rows.Celular %>">
+                    </div>
+                    <div class="row">
+                        <label for="Edad">Edad</label>
+                        <input type="text" name="Edad" id="Edad" value="<%= rows.Edad %>">
+                    </div>
+                    <div class="row">
+                        <label for="Genero">Género</label>
+                        <input type="text" name="Genero" id="Genero" value="<%= rows.Genero %>">
+                    </div>
+                    <div class="row">
+                        <button type="submit">Guardar</button>
+                        <a href="/usuario">Cancelar</a>
+                    </div>
+                </form>
+                <% } %>
             </div>
-            <div class="row">
-                <label for="Nombre">Nombre</label>
-                <input type="text" name="Nombre" id="Nombre" value="<%= rows.Nombre %>">
-            </div>
-            <div class="row">
-                <label for="Correo">Correo</label>
-                <input type="text" name="Correo" id="Correo" value="<%= rows.Correo %>">
-            </div>
-            <div class="row">
-                <label for="Celular">Celular</label>
-                <input type="text" name="Celular" id="Celular" value="<%= rows.Celular %>">
-            </div>
-            <div class="row">
-                <label for="Edad">Edad</label>
-                <input type="text" name="Edad" id="Edad" value="<%= rows.Edad %>">
-            </div>
-            <div class="row">
-                <label for="Genero">Género</label>
-                <input type="text" name="Genero" id="Genero" value="<%= rows.Genero %>">
-            </div>
-            <div class="row">
-                <button type="submit">Guardar</button>
-                <a href="/usuario">Cancelar</a>
-            </div>
-        </form>
-        <% } %>
-    </div>
+        </section>
+    </main>   
 </body>
 </html>

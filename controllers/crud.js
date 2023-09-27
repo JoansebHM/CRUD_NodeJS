@@ -44,7 +44,7 @@ exports.update = (req, res)=>{
 
 exports.save_doctor = (req, res) => {
     const NombreUs = req.body.NombreUs;
-    const ApellidoUs = req.body.Correo;
+    const ApellidoUs = req.body.ApellidoUs;
     const CorreoUs = req.body.CorreoUs;
     const Especialidad = req.body.Especialidad;
     conexion.query('INSERT INTO doctores SET ?', {
@@ -62,7 +62,7 @@ exports.save_doctor = (req, res) => {
 exports.update_doctor = (req, res) => {
     const IdDoctor = req.body.IdDoctor;
     const NombreUs = req.body.NombreUs;
-    const ApellidoUs = req.body.Correo;
+    const ApellidoUs = req.body.ApellidoUs;
     const CorreoUs = req.body.CorreoUs;
     const Especialidad = req.body.Especialidad;
     conexion.query('UPDATE doctores SET ? WHERE IdDoctor = ?', [{

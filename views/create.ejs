@@ -4,41 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/optionstyles.css">
 </head>
 <body>
-    <h1>
-        Nuevo Registro
-    </h1>
-    <div class="main-div">
-        <form action="/save" method="post">
-            <div class="row">
-                <label for="Nombre">Nombre</label>
-                <input type="text" name="Nombre" id="Nombre" required>
+    <main>
+        <section class="create-reg">
+            <div class="main-div">
+                <form action="/save" method="post" class="main-form">
+                    <div class="row">
+                        <h1>Registro</h1>
+                    </div>
+                    <div class="row">
+                        <label for="Nombre">Nombre</label>
+                        <input type="text" name="Nombre" id="Nombre">
+                    </div>
+                    <div class="row">
+                        <label for="Correo">Correo</label>
+                        <input type="text" name="Correo" id="Correo">
+                    </div>
+                    <div class="row">
+                        <label for="Celular">Celular</label>
+                        <input type="text" name="Celular" id="Celular">
+                    </div>
+                    <div class="row">
+                        <label for="Edad">Edad</label>
+                        <input type="text" name="Edad" id="Edad">
+                    </div>
+                    <div class="row">
+                        <label for="Genero">Género</label>
+                        <input type="text" name="Genero" id="Genero">
+                    </div>
+                    <div class="row">
+                        <button type="submit">Guardar</button>
+                        <a href="/usuario">Cancelar</a>
+                    </div>
+                </form>
             </div>
-            <div class="row">
-                <label for="Correo">Correo</label>
-                <input type="text" name="Correo" id="Correo">
-            </div>
-            <div class="row">
-                <label for="Celular">Celular</label>
-                <input type="text" name="Celular" id="Celular">
-            </div>
-            <div class="row">
-                <label for="Edad">Edad</label>
-                <input type="text" name="Edad" id="Edad">
-            </div>
-            <div class="row">
-                <label for="Genero">Género</label>
-                <input type="text" name="Genero" id="Genero">
-            </div>
-            <div class="row">
-                <button type="submit">Guardar</button>
-                <a href="/usuario">Cancelar</a>
-            </div>
-        </form>
-    </div>
-
-    
+        </section>
+    </main>
 </body>
 </html>
