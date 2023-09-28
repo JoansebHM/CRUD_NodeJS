@@ -77,3 +77,45 @@ exports.update_doctor = (req, res) => {
         res.redirect('/doctores')
      })
 }
+
+
+exports.save_cita = (req, res) => {
+    const IdDoctor = req.body.IdDoctor;
+    const IdUsuario = req.body.IdUsuario;
+    
+    if(IdDoctor && IdUsuario){
+        const FechaCita = req.body.FechaCita;
+        const Lugar = req.body.Lugar;
+        conexion.query('INSERT INTO citas SET ?', {
+            IdDoctor: IdDoctor,
+            IdUsuario: IdUsuario,
+            FechaCita: FechaCita,
+            Lugar: Lugar}, (err) => {
+            if (err){
+                throw err
+            }
+            res.redirect('/citas')
+         })
+    } else {
+        res.redirect('/citas')
+    }
+}
+
+
+exports.update_cita = (req, res) => {
+    const IdCitas = req.body.ApellidoUs;
+    const ApellidoUs = req.body.ApellidoUs;
+    const CorreoUs = req.body.CorreoUs;
+    const Especialidad = req.body.Especialidad;
+    conexion.query('UPDATE doctores SET ? WHERE IdDoctor = ?', [{
+        NombreUs: NombreUs,
+        ApellidoUs: ApellidoUs,
+        CorreoUs: CorreoUs,
+        Especialidad: Especialidad,
+     }, IdDoctor], (err) => {
+        if (err){
+            throw err
+        }
+        res.redirect('/doctores')
+     })
+}

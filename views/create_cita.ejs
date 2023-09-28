@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/optionstyles.css">
+</head>
+<body>
+    <main>
+        <section class="create-reg">
+            <div class="main-div">
+                <form action="/save_cita" method="post" class="main-form">
+                    <div class="row">
+                        <h1>Agendar Cita</h1>
+                    </div>
+                    <div class="row">
+                        <label for="">Doctor</label>
+                        <select name="IdDoctor" id="">
+                            <option>Seleccionar</option>
+                            <% rows.forEach((doctor) => { %>
+                                <option value="<%= doctor.IdDoctor %>">Id Doctor <%=doctor.IdDoctor%> -> <%= doctor.NombreUs %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label for="">Usuario</label>
+                        <select name="IdUsuario" id="">
+                            <option>Seleccionar</option>
+                            <% user.forEach((user_) => { %>
+                                <option value="<%= user_.IdUsuario %>">Id Usuario <%= user_.IdUsuario %> <%= user_.Nombre %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label for="">Fecha</label>
+                        <input type="date" name="FechaCita">
+                    </div>
+                    <div class="row">
+                        <label for="">Lugar</label>
+                        <input type="text" name="Lugar">
+                    </div>
+                    <div class="row">
+                        <button type="submit">Guardar</button>
+                        <a href="/citas">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

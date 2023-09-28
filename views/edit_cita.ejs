@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/optionstyles.css">
+</head>
+<body>
+    <main>
+        <section class="create-reg">
+            <div class="main-div">
+                <% if (rows) { %>
+                <form action="/edit_cita" method="post" class="main-form">
+                    <div class="row">
+                        <h1>
+                            Editar Cita
+                        </h1>
+                    </div>
+                    <div class="row">   
+                        <label for="Nombre">Id Cita</label>
+                        <input id="id" name="" value="<%= rows.IdCitas %>" readonly>
+                    </div>
+                    <div class="row">
+                        <label for="Nombre">Doctor</label>
+                        <select name="" id="">
+
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label for="Correo">Usuario</label>
+                        <input type="text" name="ApellidoUs" id="ApellidoUs" value="<%= rows.ApellidoUs %>">
+                    </div>
+                    <div class="row">
+                        <label for="Celular">Fecha</label>
+                        <input type="text" name="CorreoUs" id="CorreoUs" value="<%= rows.CorreoUs %>">
+                    </div>
+                    <div class="row">
+                        <label for="Edad">Lugar</label>
+                        <input type="text" name="Especialidad" id="Especialidad" value="<%= rows.Especialidad %>">
+                    </div>
+                    <div class="row">
+                        <button type="submit">Guardar</button>
+                        <a href="/citas">Cancelar</a>
+                    </div>
+                </form>
+                <% } %>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

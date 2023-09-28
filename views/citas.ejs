@@ -22,89 +22,41 @@
         </div>
         <div class="show-info">
           <div>
-            <h1>DOCTORES</h1>
+            <h1>CITAS</h1>
           </div>
           <table class="table table-bordered">
             <thead>
-              <th scope="col">IdDoctor</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Especialidad</th>
+              <th scope="col">Id Cita</th>
+              <th scope="col">Lugar</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Id Doctor</th>
+              <th scope="col">Id Usuario</th>
               <th scope="col">Acciones</th>
             </thead>
+              <% rows.forEach((cita) =>{ %>
+                <tr>
+                  <td scope="col"><%= cita.IdCitas %></td>
+                  <td scope="col"><%= cita.Lugar %></td>
+                  <td scope="col"><%= cita.FechaCita %></td>
+                  <td scope="col"><%= cita.IdDoctor %></td>
+                  <td scope="col"><%= cita.IdUsuario %></td>
+                  <td scope="col">
+                    <a href="/edit_cita/<%= cita.IdCitas %>" class="link">
+                      <img src="/img/editar.png" alt="" class="icon">
+                    </a>
+                    <a href="/delete_cita/<%= cita.IdCitas %>" class="link">
+                      <img src="/img/borrar.png" alt="" class="icon">
+                    </a>
+                  </td>
+                </tr>
+              <% }) %>
             <thead>
-                <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Doctores</title>
-    <link rel="stylesheet" href="/optionstyles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-  <body>
-    <main>
-      <section class="main-section">
-        <div class="controls">
-          <div class="tool">
-            <p>
-              <a href="/create_doctor" class="link">Registrar Doctor</a>
-            </p>
-          </div>
-          <div class="tool">
-            <a href="/" class="link">Home</a>
-          </div>
-        </div>
-        <div class="show-info">
-          <div>
-            <h1>Citas</h1>
-          </div>
-          <table class="table table-bordered">
-            <thead>
-              <th scope="col">IdDoctor</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Especialidad</th>
-              <th scope="col">Acciones</th>
-            </thead>
-            <thead>
-              <% rows.forEach((doctor)=>{ %>
-                  <tr>
-                    <td><%= doctor.IdDoctor %></td>
-                    <td><%= doctor.NombreUs %></td>
-                    <td><%= doctor.ApellidoUs %></td>
-                    <td><%= doctor.CorreoUs %></td>
-                    <td><%= doctor.Especialidad %></td>
-                    <td>
-                      <a href="/edit_doctor/<%= doctor.IdDoctor %>" class="link">
-                        <img src="/img/editar.png" alt="" class="icon">
-                      </a>
-                      <a href="/delete_doctor/<%= doctor.IdDoctor %>" class="link">
-                        <img src="/img/borrar.png" alt="" class="icon">
-                      </a>
-                    </td>
-                  </tr>
-                <% }) %>   
-            </thead>
-          </table>
-        </div>
-      </section>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  </body>
-</html>
 
             </thead>
-          </table>
-        </div>
-      </section>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  </body>
+        </section>
+      </main>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
 </html>
